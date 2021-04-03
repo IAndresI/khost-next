@@ -1,8 +1,9 @@
 import GhostContentAPI from '@tryghost/content-api';
+console.log(process.env.API_URL);
 
 const api = new GhostContentAPI({
-  url: "https://khost.ghost.io",
-  key: "9ef8d3c0e4619813d379e1f4a5",
+  url: process.env.API_URL,
+  key: process.env.CONTENT_API_KEY,
   version: "v3"
 });
 
