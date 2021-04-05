@@ -1,5 +1,4 @@
 import GhostContentAPI from '@tryghost/content-api';
-console.log(process.env.API_URL);
 
 const api = new GhostContentAPI({
   url: process.env.API_URL,
