@@ -1,0 +1,132 @@
+.technology {
+  margin-bottom: 146px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  text-align: center;
+  position: relative;
+  color: #61648e;
+  max-width: 270px;
+  min-height: 300px;
+  padding: 65px 35px 45px;
+  box-shadow: 0px 0px 25px 0px rgba(20, 27, 201, 0.05);
+  overflow: hidden;
+  border-radius: 10px;
+  margin-right: 15px;
+  transition: all .3s;
+
+  &:hover {
+    color: #ffffff;
+
+    .spot {
+      border-radius: 0% 100% 50% 50% / 0% 0% 100% 100%;
+      transform: scale(4) rotate(360deg);
+      background-position: center;
+      background-size: 150%;
+      height: 100%;
+      width: 100%;
+    }
+
+    .image {
+      transform: scale(1.5);
+    }
+  }
+}
+
+.title {
+  font-family: Ubuntu, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 30px;
+  transition: all .6s;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 1.8;
+  transition: all .6s;
+}
+
+.image {
+  background-image: url(/images/technology/easy.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto 70px;
+  transition: all .6s;
+}
+
+.image.fast {
+  background-image: url(/images/technology/fast.png);
+}
+
+.image.privacy {
+  background-image: url(/images/technology/protected.png);
+}
+
+.image.monthly {
+  background-image: url(/images/technology/monthly.svg);
+}
+
+.image.free {
+  background-image: url(/images/technology/free.png);
+}
+
+.image.boost {
+  background-image: url(/images/technology/boost.png);
+}
+
+.image.multiple {
+  background-image: url(/images/technology/multiple.svg);
+}
+
+.image.unlimited {
+  background-image: url(/images/technology/unlimited.svg);
+}
+
+.spot {
+  position: absolute;
+  top: 42px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 39% 61% 75% 25% / 51% 50% 50% 49%;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, rgb(103, 0, 231) 0%, rgb(250, 99, 123) 100%);
+  z-index: -1;
+  transition: all 1.5s;
+}
+
+.spot.green {
+  background: linear-gradient(45deg, rgb(160, 184, 141) 0%, rgb(0, 221, 115) 100%);
+}
+
+.spot.yellow {
+  background: linear-gradient(-45deg, rgb(252, 106, 14) 0%, rgb(253, 182, 66) 100%);
+}
+
+.spot.blue {
+  background: linear-gradient(-45deg, rgb(54, 21, 231) 0%, rgb(68, 162, 246) 100%);
+}
+
+.spot.dark-purple {
+  background: linear-gradient(-45deg, rgb(160, 42, 175) 0%, rgb(68, 22, 135) 100%);
+}
+
+.spot.red {
+  background: linear-gradient(-45deg, rgb(251, 0, 84) 0%, rgb(245, 90, 42) 100%);
+}
+
+.spot.pink {
+  background: linear-gradient(-45deg, rgb(232, 71, 105) 0%, rgb(157, 29, 151) 100%);
+}
+
+.spot.light-purple {
+  background: linear-gradient(-45deg, rgb(141, 64, 251) 0%, rgb(90, 87, 251) 100%);
+}
