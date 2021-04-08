@@ -3,12 +3,14 @@ import Layout from '../components/layout';
 import {getPosts} from '../api';
 import Preview from '../components/preview';
 import Technology from '../components/technology';
+import Plan from '../components/plan';
 
 export default function Home({post}) {
   return (
     <Layout>
       <Preview />
       <Technology />
+      <Plan />
       {/* {
         post.map(e => (<h1 key={e.id}>{e.title}</h1>))
       } */}
