@@ -1,0 +1,60 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 131px;
+
+  &:nth-child(2n+2) {
+    flex-direction: row-reverse;
+
+    .choose {
+      .description {
+        margin-right: 0;
+        margin-left: 100px;
+      }
+    }
+  }
+}
+
+.description {
+  width: 43%;
+  margin-right: 100px;
+  padding-top: 78px;
+}
+
+.name {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #3131e9;
+  margin-bottom: 23px;
+}
+
+.yellow {
+  color: #fdbb4f;
+}
+
+.pink {
+  color: #a02aaf;
+}
+
+.green {
+  color: #22dd73;
+}
+
+.title {
+  color: #29156b;
+  font-family: Ubuntu, sans-serif;
+  font-size: 40px;
+  line-height: 1.375;
+  margin-bottom: 19px;
+  max-width: 390px;
+}
+
+.text {
+  color: #9294b5;
+  line-height: 1.875;
+}
+
+.image {
+  padding-top: 15px;
+  max-height: 414px;
+}

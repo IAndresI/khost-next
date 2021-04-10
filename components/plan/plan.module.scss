@@ -69,6 +69,10 @@
   background-size: 200%;
 }
 
+.activeSpanRight {
+  left: 50%;
+}
+
 .list {
   display: flex;
 }
@@ -161,7 +165,6 @@
 }
 
 .yearly {
-  display: none;
   transform: rotateY(180deg) scale(-1, 1);
 }
 
@@ -314,9 +317,25 @@
   font-size: 30px;
   font-family: Ubuntu, sans-serif;
   font-weight: 700;
+  transition: opacity 3s;
+  opacity: 0;
+}
 
-  .yearly {
-    display: none;
+.price.yearly {
+  animation: fadeIn2 3s forwards;
+
+  @keyframes fadeIn2 {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+}
+
+.price.mounthly {
+  animation: fadeIn 3s forwards;
+
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
   }
 }
 

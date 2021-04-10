@@ -1,0 +1,93 @@
+.world {
+  background-image: url('/images/bg/2bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-y: top;
+  padding-top: 150px;
+  margin-bottom: 150px;
+}
+
+.inner {
+  padding-bottom: 150px;
+}
+
+.map {
+  position: relative;
+  min-width: 1140px;
+}
+
+.image {
+  width: 100%;
+}
+
+.dot {
+  position: absolute;
+  top: 158px;
+  left: 171px;
+}
+
+.newyork {
+  top: 144px;
+  left: 281px;
+}
+
+.russia {
+  top: 62px;
+  left: 827px;
+}
+
+.australia {
+  top: 422px;
+  left: 1070px;
+}
+
+.middle {
+  top: 211px;
+  left: 700px;
+}
+
+.london {
+  top: 69px;
+  left: 597px;
+}
+
+.brazil {
+  top: 380px;
+  left: 240px;
+}
+
+.afrika {
+  top: 385px;
+  left: 670px;
+}
+
+.singapore {
+  top: 324px;
+  left: 925px;
+}
+
+.country {
+  position: relative;
+  color: #ffffff;
+  font-size: 16px;
+
+  &:before {
+    content: "";
+    box-shadow: 0 0 15px 12px #771296;
+    border-radius: 50%;
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background-color: #fff;
+    left: -30px;
+    top: 4px;
+  }
+}
+
+.green {
+
+  &:before {
+    box-shadow: 0 0 15px 12px #298370;
+  }
+}
