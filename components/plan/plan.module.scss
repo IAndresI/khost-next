@@ -9,7 +9,7 @@
   background-size: 900%;
   padding-bottom: 45px;
   margin-bottom: 50px;
-  transition: all 1s;
+  transition: all 1.5s;
 }
 
 .inner {
@@ -77,6 +77,15 @@
   display: flex;
 }
 
+.spotContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
 .spot {
   position: absolute;
   background: linear-gradient(-52deg, rgb(39, 184, 141) 0%, rgb(34, 221, 115) 100%);
@@ -100,18 +109,30 @@
   transition: all 1.5s;
 }
 
-.tarif {
-  min-width: 270px;
-  overflow: hidden;
+.face {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-height: 542px;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1s;
+  backface-visibility: hidden;
   box-shadow: 0px 0px 25px 0px rgba(20, 27, 201, 0.05);
   text-align: center;
   padding: 25px 0;
   border-radius: 20px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.tarif {
+  min-width: 270px;
+  height: 542px;
   margin-right: 30px;
-  transition: transform 1s;
+  transform-style: preserve-3d;
   position: relative;
+  transition: all 1s;
 
   &:last-child {
     margin-right: 0;
@@ -119,165 +140,180 @@
 
   &:hover {
 
-      .descriptionItem,
-      .price,
-      .title,
-      .text,
-      .descriptionItem::before {
-        background: linear-gradient(-52deg, rgb(39, 184, 141) 0%, rgb(34, 221, 115) 100%);
-        color: transparent;
-        background-clip: text;
-        transition: all .3s;
-      }
+    .descriptionItem,
+    .price,
+    .title,
+    .text,
+    .descriptionItem::before {
+      background: linear-gradient(-52deg, rgb(39, 184, 141) 0%, rgb(34, 221, 115) 100%);
+      color: transparent;
+      background-clip: text;
+      transition: all .3s;
+    }
 
-      .spot {
-        background-position: center;
-        transform: translate(-50%, -50%) scale(15);
-      }
+    .spot {
+      background-position: center;
+      transform: translate(-50%, -50%) scale(15);
+    }
 
-      .typeContainer {
-        background-size: 20000%;
-        background-position-x: right;
-      }
+    .typeContainer {
+      background-size: 20000%;
+      background-position-x: right;
+    }
 
-      .type {
-        background: linear-gradient(-52deg, rgb(39, 184, 141) 0%, rgb(34, 221, 115) 100%);
-        color: transparent;
-        background-clip: text;
-        background-position-x: right;
-      }
+    .type {
+      background: linear-gradient(-52deg, rgb(39, 184, 141) 0%, rgb(34, 221, 115) 100%);
+      color: transparent;
+      background-clip: text;
+      background-position-x: right;
+    }
 
-      .description {
-        background-size: 20000%;
-        background-position-x: right;
-      }
+    .description {
+      background-size: 20000%;
+      background-position-x: right;
+    }
 
-      .title,
-      .text {
-        transition: all 1s;
-        color: #ffffff;
-      }
+    .title,
+    .text {
+      transition: all 1s;
+      color: #ffffff;
+    }
 
-      .link {
-        background-size: 300% !important;
-      }
+    .link {
+      background-size: 300% !important;
+    }
   }
 }
 
-.yearly {
-  transform: rotateY(180deg) scale(-1, 1);
+.face.back {
+  transform: perspective(500px) rotateY(180deg);
+}
+
+.face.front {
+  transform: perspective(500px) rotateY(0deg);
+}
+
+.tarif.yearly {
+
+  .face.front {
+    transform: perspective(500px) rotateY(180deg);
+  }
+
+  .face.back {
+    transform: perspective(500px) rotateY(360deg);
+  }
 }
 
 .startup {
 
-    .typeContainer {
-      background: linear-gradient(-52deg, #ffffff 0%, #4d02a8 90%, #be2841 100%);
-      background-size: 900%;
-    }
+  .typeContainer {
+    background: linear-gradient(-52deg, #ffffff 0%, #4d02a8 90%, #be2841 100%);
+    background-size: 900%;
+  }
 
-    .description {
-      background: linear-gradient(-52deg, #ffffff 0%, #4d02a8 90%, #be2841 100%);
-      background-size: 900%;
-    }
+  .description {
+    background: linear-gradient(-52deg, #ffffff 0%, #4d02a8 90%, #be2841 100%);
+    background-size: 900%;
+  }
 
-    .link {
-      background: linear-gradient(-52deg, #4d02a8 0%, #be2841 100%);
-    }
+  .link {
+    background: linear-gradient(-52deg, #4d02a8 0%, #be2841 100%);
+  }
 
-    .spot {
-      background: linear-gradient(45deg, rgb(103, 0, 231) 0%, rgb(250, 99, 123) 100%);
-    }
+  .spot {
+    background: linear-gradient(45deg, rgb(103, 0, 231) 0%, rgb(250, 99, 123) 100%);
+  }
 
   &:hover {
 
-      .descriptionItem,
-      .price,
-      .title,
-      .text,
-      .descriptionItem::before {
-        background: linear-gradient(to left, rgb(103, 0, 231) 0%, rgb(250, 99, 123) 100%);
-        background-clip: text;
-      }
+    .descriptionItem,
+    .price,
+    .title,
+    .text,
+    .descriptionItem::before {
+      background: linear-gradient(to left, rgb(103, 0, 231) 0%, rgb(250, 99, 123) 100%);
+      background-clip: text;
+    }
 
-      .type {
-        background: linear-gradient(to left, rgb(103, 0, 231) 0%, rgb(250, 99, 123) 100%);
-        background-clip: text;
-      }
+    .type {
+      background: linear-gradient(to left, rgb(103, 0, 231) 0%, rgb(250, 99, 123) 100%);
+      background-clip: text;
+    }
   }
 }
 
 .popular {
-    .typeContainer {
-      background: linear-gradient(-52deg, #ffffff 0%, rgb(252, 106, 14) 90%, rgb(253, 182, 66) 100%);
-      background-size: 900%;
-    }
+  .typeContainer {
+    background: linear-gradient(-52deg, #ffffff 0%, rgb(252, 106, 14) 90%, rgb(253, 182, 66) 100%);
+    background-size: 900%;
+  }
 
-    .description {
-      background: linear-gradient(-52deg, #ffffff 0%, rgb(252, 106, 14) 90%, rgb(253, 182, 66) 100%);
-      background-size: 900%;
-    }
+  .description {
+    background: linear-gradient(-52deg, #ffffff 0%, rgb(252, 106, 14) 90%, rgb(253, 182, 66) 100%);
+    background-size: 900%;
+  }
 
-    .link {
-      background: linear-gradient(-52deg, rgb(252, 106, 14) 0%, rgb(253, 182, 66) 100%);
-    }
+  .link {
+    background: linear-gradient(-52deg, rgb(252, 106, 14) 0%, rgb(253, 182, 66) 100%);
+  }
 
-    .spot {
-      background: linear-gradient(-52deg, rgb(252, 106, 14) 0%, rgb(253, 182, 66) 100%);
-    }
+  .spot {
+    background: linear-gradient(-52deg, rgb(252, 106, 14) 0%, rgb(253, 182, 66) 100%);
+  }
 
   &:hover {
 
-      .descriptionItem,
-      .price,
-      .title,
-      .text,
-      .descriptionItem::before {
-        background: linear-gradient(-52deg, rgb(252, 106, 14) 0%, rgb(253, 182, 66) 100%);
-        background-clip: text;
-      }
+    .descriptionItem,
+    .price,
+    .title,
+    .text,
+    .descriptionItem::before {
+      background: linear-gradient(-52deg, rgb(252, 106, 14) 0%, rgb(253, 182, 66) 100%);
+      background-clip: text;
+    }
 
-      .type {
-        background: linear-gradient(-52deg, rgb(252, 106, 14) 0%, rgb(253, 182, 66) 100%);
-        background-clip: text;
-      }
+    .type {
+      background: linear-gradient(-52deg, rgb(252, 106, 14) 0%, rgb(253, 182, 66) 100%);
+      background-clip: text;
+    }
   }
 }
 
 .premium {
-    .typeContainer {
-      background: linear-gradient(-52deg, #ffffff 0%, rgb(232, 71, 105) 90%, rgb(157, 29, 151) 100%);
-      background-size: 900%;
-    }
+  .typeContainer {
+    background: linear-gradient(-52deg, #ffffff 0%, rgb(232, 71, 105) 90%, rgb(157, 29, 151) 100%);
+    background-size: 900%;
+  }
 
-    .description {
-      background: linear-gradient(-52deg, #ffffff 0%, rgb(232, 71, 105) 90%, rgb(157, 29, 151) 100%);
-      background-size: 900%;
-    }
+  .description {
+    background: linear-gradient(-52deg, #ffffff 0%, rgb(232, 71, 105) 90%, rgb(157, 29, 151) 100%);
+    background-size: 900%;
+  }
 
-    .link {
-      background: linear-gradient(-52deg, rgb(232, 71, 105) 0%, rgb(157, 29, 151) 100%);
-    }
+  .link {
+    background: linear-gradient(-52deg, rgb(232, 71, 105) 0%, rgb(157, 29, 151) 100%);
+  }
 
 
-    .spot {
-      background: linear-gradient(-52deg, rgb(232, 71, 105) 0%, rgb(157, 29, 151) 100%);
-    }
+  .spot {
+    background: linear-gradient(-52deg, rgb(232, 71, 105) 0%, rgb(157, 29, 151) 100%);
+  }
 
   &:hover {
 
-      .descriptionItem,
-      .price,
-      .title,
-      .text,
-      .descriptionItem::before {
-        background: linear-gradient(-52deg, rgb(232, 71, 105) 0%, rgb(157, 29, 151) 100%);
-        background-clip: text;
-      }
+    .descriptionItem,
+    .price,
+    .title,
+    .text,
+    .descriptionItem::before {
+      background: linear-gradient(-52deg, rgb(232, 71, 105) 0%, rgb(157, 29, 151) 100%);
+      background-clip: text;
+    }
 
-      .type {
-        background: linear-gradient(-52deg, rgb(232, 71, 105) 0%, rgb(157, 29, 151) 100%);
-        background-clip: text;
-      }
+    .type {
+      background: linear-gradient(-52deg, rgb(232, 71, 105) 0%, rgb(157, 29, 151) 100%);
+      background-clip: text;
+    }
   }
 }
 
@@ -317,26 +353,6 @@
   font-size: 30px;
   font-family: Ubuntu, sans-serif;
   font-weight: 700;
-  transition: opacity 3s;
-  opacity: 0;
-}
-
-.price.yearly {
-  animation: fadeIn2 3s forwards;
-
-  @keyframes fadeIn2 {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-  }
-}
-
-.price.mounthly {
-  animation: fadeIn 3s forwards;
-
-  @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-  }
 }
 
 .descriptionItem {
@@ -352,7 +368,8 @@
 }
 
 .link {
-  font-size: 700;
+  font-weight: 700;
+  font-size: 1rem;
   text-transform: uppercase;
   padding: 15px 40px;
   background: linear-gradient(-52deg, rgb(39, 184, 141) 0%, rgb(34, 221, 115) 100%);

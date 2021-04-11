@@ -1,6 +1,5 @@
 import {useEffect} from 'react';
 import styles from './preview.module.scss';
-import Particle from '../particle';
 
 const Preview = () => {
 

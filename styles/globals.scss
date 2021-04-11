@@ -198,6 +198,7 @@ a {
     background-image: url('/images/title-separator.png');
     background-repeat: no-repeat;
     height: 40px;
+    animation: fromUpToDown 3s infinite;
   }
 
   &__image-container {
